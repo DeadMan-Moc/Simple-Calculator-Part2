@@ -5,41 +5,39 @@ class Calculator{
       this.lastAns = 0;
     }
   
-    add(...args){
-  
-      let i = 0;
+    add(){
+
       let sum = 0;
-      for (; i < args.length; i++){
-        if (args[i] === "LAST"){
-          args[i] = this.lastAns;
+      for (let i = 0; i < arguments.length; i++){
+        if (arguments[i] === "LAST"){
+            arguments[i] = this.lastAns;
         }
-        if (args[i] === "SLOT_1"){
-          args[i] = this.get_slot(1);
+        if (arguments[i] === "SLOT_1"){
+            arguments[i] = this.get_slot(1);
         }
-        if (args[i] === "SLOT_2"){
-          args[i] = this.get_slot(2);
+        if (arguments[i] === "SLOT_2"){
+            arguments[i] = this.get_slot(2);
         }
-        sum = sum + args[i];
+        sum = sum + arguments[i];
       }
       this.lastAns = sum;
       return sum;
     }
   
-    multiply(...args){
+    multiply(){
   
-      let i = 0;
       let product = 1;
-      for (; i < args.length; i++){
-        if (args[i] === "LAST"){
-          if (args[i] === "SLOT_1"){
-            args[i] = this.get_slot(1);
+      for (let i = 0; i < arguments.length; i++){
+        if (arguments[i] === "LAST"){
+          if (arguments[i] === "SLOT_1"){
+            arguments[i] = this.get_slot(1);
           }
-          if (args[i] === "SLOT_2"){
-            args[i] = this.get_slot(2);
+          if (arguments[i] === "SLOT_2"){
+            arguments[i] = this.get_slot(2);
           }
-          args[i] = this.lastAns;
+          arguments[i] = this.lastAns;
         }
-        product = product * args[i];
+        product = product * arguments[i];
       }
       this.lastAns = product;
       return product;
