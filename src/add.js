@@ -29,13 +29,13 @@ class Calculator{
       let product = 1;
       for (let i = 0; i < arguments.length; i++){
         if (arguments[i] === "LAST"){
-          if (arguments[i] === "SLOT_1"){
-            arguments[i] = this.get_slot(1);
-          }
-          if (arguments[i] === "SLOT_2"){
-            arguments[i] = this.get_slot(2);
-          }
           arguments[i] = this.lastAns;
+        }
+        if (arguments[i] === "SLOT_1"){
+          arguments[i] = this.get_slot(1);
+        }
+        if (arguments[i] === "SLOT_2"){
+          arguments[i] = this.get_slot(2);
         }
         product = product * arguments[i];
       }
